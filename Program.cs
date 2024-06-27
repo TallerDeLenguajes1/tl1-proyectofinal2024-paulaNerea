@@ -1,1 +1,6 @@
-﻿
+﻿using System;
+using EspaciodePersonaje;
+
+
+
+

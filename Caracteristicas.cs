@@ -1,6 +1,5 @@
 using System;
 public class Caracteristicas{
-    Random random = new Random();
     
     private int velocidad; //1 a 10
     private int destreza; //1 a 5
@@ -40,7 +39,7 @@ public class Caracteristicas{
         private set => salud = value;
     } //100
 
-    public Caracteristicas(int velocidad, int destreza, int fuerza, int nivel, int armadura, int salud){
+    public Caracteristicas(int velocidad, int destreza, int fuerza, int nivel, int armadura){
         Velocidad = velocidad;
         Destreza = destreza;
         Fuerza = fuerza;
