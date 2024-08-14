@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using EspaciodePersonaje;
 
+namespace EspaciodePersonajeJson{
 public class PersonajesJson
 {
     public static void GuardarPersonajes(List<Personaje> personajes, string nombreArchivo)
@@ -22,7 +23,7 @@ public class PersonajesJson
         }
     }
     
-    public List<Personaje> LeerPersonajes(string nombreArchivo)
+    public static List<Personaje> LeerPersonajes(string nombreArchivo)
     {
         try
         {
@@ -39,11 +40,11 @@ public class PersonajesJson
         }
     }
 
-    public bool Existe(string nombreArchivo)
+    public static bool Existe(string nombreArchivo)
     {
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;   
 
     }
 
-
+}
 }

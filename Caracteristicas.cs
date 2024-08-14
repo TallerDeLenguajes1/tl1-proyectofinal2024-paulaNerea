@@ -1,12 +1,11 @@
 using System;
-namespace EspaciodePersonaje;
 public class Caracteristicas{
     
     private int velocidad; //1 a 10
     private int destreza; //1 a 5
-    private int fuerza; //1 a 10
+    private int magia; //1 a 10
     private int nivel; //1 a 10
-    private int armadura; //1 a 10
+    private int coraje; //1 a 10
     private int salud; //100
 
     public int Velocidad 
@@ -19,33 +18,33 @@ public class Caracteristicas{
         get => destreza; 
         private set => destreza = value;
     } //1 a 5
-    public int Fuerza
+    public int Magia
     {
-        get => fuerza; 
-        private set => fuerza = value;
+        get => magia; 
+        private set => magia = value;
     }//1 a 10
     public int Nivel
     {
         get => nivel; 
         private set => nivel = value;
     } //1 a 10
-    public int Armadura 
+    public int Coraje 
     {
-        get => armadura; 
-        private set => armadura = value;
+        get => coraje; 
+        private set => coraje = value;
     } //1 a 10
     public int Salud
     {
         get => salud; 
-        private set => salud = value;
+        set => salud = value;
     } //100
 
-    public Caracteristicas(int velocidad, int destreza, int fuerza, int nivel, int armadura){
+    public Caracteristicas(int velocidad, int destreza, int magia, int nivel, int coraje){
         Velocidad = velocidad;
         Destreza = destreza;
-        Fuerza = fuerza;
+        Magia = magia;
         Nivel = nivel;
-        Armadura = armadura;
+        Coraje = coraje;
         Salud = 100;
     }
 }

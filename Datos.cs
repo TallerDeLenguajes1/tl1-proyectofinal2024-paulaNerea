@@ -1,20 +1,19 @@
 public class Datos
 {
-    private string tipo, nombre, apodo;
-    private DateTime nacimiento;
-    private int edad;
+    private string casa, nombre, apodo, nacimiento;
 
-    public Datos(string tipo, string nombre, string apodo)
+    public Datos(string casa, string nombre, string apodo, string nacimiento)
     {
-        this.tipo = tipo;
+        this.casa = casa;
         this.nombre = nombre;
         this.apodo = apodo;
+        this.nacimiento = nacimiento;
     }
 
-    public string Tipo
+    public string Casa
     {
-        get => tipo;
-        set => tipo = value; 
+        get => casa;
+        set => casa = value; 
     }
     public string Nombre
     {
@@ -26,15 +25,10 @@ public class Datos
         get => apodo;
         set => apodo = value; 
     }
-    public DateTime Nacimiento
+    public string Nacimiento
     {
         get => nacimiento;
         set => nacimiento = value; 
-    }
-    public int Edad
-    {
-        get => edad;
-        set => edad = value; 
     }
 }
 

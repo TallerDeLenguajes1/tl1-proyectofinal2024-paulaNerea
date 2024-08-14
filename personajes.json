@@ -1,0 +1,162 @@
+[
+  {
+    "Datos": {
+      "Casa": "Slytherin",
+      "Nombre": "Severus Snape",
+      "Apodo": "El Maestro de Pociones",
+      "Nacimiento": "1989-11-13"
+    },
+    "Caracteristicas": {
+      "Velocidad": 2,
+      "Destreza": 5,
+      "Magia": 4,
+      "Nivel": 10,
+      "Coraje": 9,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Gryffindor",
+      "Nombre": "Ron Weasley",
+      "Apodo": "El Amigo Fiel",
+      "Nacimiento": "2014-12-20"
+    },
+    "Caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 5,
+      "Magia": 9,
+      "Nivel": 2,
+      "Coraje": 2,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Ravenclaw",
+      "Nombre": "Luna Lovegood",
+      "Apodo": "La Exc\u00E9ntrica",
+      "Nacimiento": "1984-08-19"
+    },
+    "Caracteristicas": {
+      "Velocidad": 10,
+      "Destreza": 1,
+      "Magia": 4,
+      "Nivel": 5,
+      "Coraje": 4,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Gryffindor",
+      "Nombre": "Neville Longbottom",
+      "Apodo": "El Valiente",
+      "Nacimiento": "1973-08-14"
+    },
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 2,
+      "Magia": 3,
+      "Nivel": 9,
+      "Coraje": 10,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Hufflepuff",
+      "Nombre": "Cedric Diggory",
+      "Apodo": "El Justo",
+      "Nacimiento": "2016-06-12"
+    },
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 1,
+      "Magia": 1,
+      "Nivel": 6,
+      "Coraje": 7,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Slytherin",
+      "Nombre": "Draco Malfoy",
+      "Apodo": "El Pr\u00EDncipe",
+      "Nacimiento": "1982-02-04"
+    },
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 2,
+      "Magia": 9,
+      "Nivel": 6,
+      "Coraje": 1,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Ravenclaw",
+      "Nombre": "Cho Chang",
+      "Apodo": "La Encantadora",
+      "Nacimiento": "1972-12-28"
+    },
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 2,
+      "Magia": 9,
+      "Nivel": 8,
+      "Coraje": 8,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Gryffindor",
+      "Nombre": "Ginny Weasley",
+      "Apodo": "La Guerrera",
+      "Nacimiento": "2019-10-31"
+    },
+    "Caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 3,
+      "Magia": 6,
+      "Nivel": 3,
+      "Coraje": 3,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Gryffindor",
+      "Nombre": "Hermione Granger",
+      "Apodo": "La Cerebrito",
+      "Nacimiento": "2018-11-07"
+    },
+    "Caracteristicas": {
+      "Velocidad": 2,
+      "Destreza": 1,
+      "Magia": 3,
+      "Nivel": 6,
+      "Coraje": 7,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Gryffindor",
+      "Nombre": "Harry Potter",
+      "Apodo": "El Elegido",
+      "Nacimiento": "1974-08-25"
+    },
+    "Caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 1,
+      "Magia": 5,
+      "Nivel": 7,
+      "Coraje": 4,
+      "Salud": 100
+    }
+  }
+]
