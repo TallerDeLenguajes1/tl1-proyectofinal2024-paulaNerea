@@ -1,4 +1,5 @@
 using System;
+namespace EspaciodePersonaje;
 public class Caracteristicas{
     
     private int velocidad; //1 a 10

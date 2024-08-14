@@ -2,7 +2,9 @@ namespace EspaciodePersonaje
 {
     public class Personaje
     {
+        //campo privado para almacenar los datos del personaje
         private Datos datos;
+        //campo privado para almacenar las caracteristicas del personaje
         private Caracteristicas caracteristicas;
 
         public Personaje(Datos datos, Caracteristicas caracteristicas)
@@ -11,16 +13,15 @@ namespace EspaciodePersonaje
             this.caracteristicas = caracteristicas;
         }
 
+
         public Datos Datos
         {
             get => datos;
-            set => datos = value;
         }
 
         public Caracteristicas Caracteristicas
         {
             get => caracteristicas;
-            set => caracteristicas = value;
         }
 
         public void MostrarPersonaje()
