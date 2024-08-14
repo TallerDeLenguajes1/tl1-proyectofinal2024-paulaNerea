@@ -1,34 +1,44 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace EspacioManejoApi
 {
+    public class Spell
+    {
+        [JsonPropertyName("spell")]
+        public string spell { get; set; }
+
+        [JsonPropertyName("use")]
+        public string use { get; set; }
+
+        [JsonPropertyName("index")]
+        public int index { get; set; }
+    }
     public class ManejoApi
     {
-        public static async Task<string?> GetDatosAsync()
+        static async Task<Spell> GetRandomSpellAsync()
         {
-            var url = "https://potterapi-fedeperin.vercel.app/es/characters";
+            var url = "https://potterapi-fedeperin.vercel.app/es/spells";
             try
             {
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
+                
+                List<Spell> spells = JsonSerializer.Deserialize<List<Spell>>(responseBody);
 
-                //la api me devuelve un lista, la deserealizo
-                List<DatoHechizoApi> hechizosApi  = JsonSerializer.Deserialize<List<DatoHechizoApi>>(responseBody) ?? new List<DatoHechizoApi>();
-
-
-                if (hechizosApi == null || hechizosApi.Count == 0)
+                if (spells != null && spells.Count > 0)
                 {
-                    Console.WriteLine("No se encontraron hechizos.");
-                    return null; // Puede ser nulo si no se encuentran hechizos
+                    Random random = new Random();
+                    int index = random.Next(spells.Count);
+                    return spells[index];
                 }
-
-                // Selecciono un hechizo random de la lista
-                Random rand = new Random();
-                int randomIndex = rand.Next(hechizosApi .Count);
-                string hechizoSeleccionado = hechizosApi[randomIndex].Name;
-                return hechizoSeleccionado;
-            }    
+                else
+                {
+                    Console.WriteLine("No se encontraron hechizos en la respuesta.");
+                    return null;
+                }
+            }
             catch (HttpRequestException e)
             {
                 Console.WriteLine("Problemas de acceso a la API");
@@ -39,8 +49,5 @@ namespace EspacioManejoApi
 
     }
     
-    public class DatoHechizoApi
-    {
-        public string Name { get; set; } = string.Empty;
-    }
+    
 }

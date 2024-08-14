@@ -3,6 +3,7 @@ using EspacioFabrica;
 using EspaciodePersonaje;
 using EspacioHistorial;
 using EspaciodePersonajeJson;
+using EspacioPartida;
 
 class Program
     {
@@ -21,7 +22,7 @@ class Program
                 {
                     case 1:
                         Console.WriteLine("Iniciando Nueva Partida...");
-                        NuevaPartida(archivoPersonajes);
+                        NuevaPartida(archivoPersonajes, archivoGanadores);
                         break;
 
                     case 2:
@@ -62,8 +63,8 @@ class Program
             Console.WriteLine("*              MENÚ PRINCIPAL           *");
             Console.WriteLine("****************************************");
             Console.WriteLine("* 1. Nueva Partida                      *");
-            Console.WriteLine("* 2. Mostrar Ganadores                   *");
-            Console.WriteLine("* 3. Salir                             *");
+            Console.WriteLine("* 2. Mostrar Ganadores                  *");
+            Console.WriteLine("* 3. Salir                              *");
             Console.WriteLine("****************************************");
             Console.WriteLine();
         }
@@ -82,7 +83,7 @@ class Program
             }
         }
         
-        static void NuevaPartida(string archivoPersonajes)
+        static void NuevaPartida(string archivoPersonajes, string archivoGanadores)
         {
             MostrarIntroduccion();
             List<Personaje> personajes;
@@ -97,7 +98,7 @@ class Program
             {
                 // Si no existe, crea personajes con la fábrica de personajes y los guarda en el JSON
                 personajes = new List<Personaje>();
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     // Crea un personaje usando la fábrica
                     Personaje personaje = FabricaPersonajes.CrearPersonaje();
@@ -107,10 +108,49 @@ class Program
 
                 PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
                 Console.WriteLine("Se crearon nuevos personajes y se guardaron en el archivo.");
+                Console.WriteLine();
             }
 
             MostrarPersonajesDisponibles(personajes);
+            Console.WriteLine("Elija su personje (Ingrese su ID)");
+            int seleccion;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out seleccion) && seleccion > 0 && seleccion <= personajes.Count)
+                {
+                    // Convertir la selección a índice 
+                    seleccion--; 
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Selección inválida. Por favor, elija un número entre 1 y " + personajes.Count + ":");
+                }
+            }
+    
+            Personaje seleccionado = personajes[seleccion]; //personaje del usuario
+            List<Personaje> rivales = new(personajes); //lista de rivales copiando la lista personajes
+            rivales.RemoveAt(seleccion); //elimino el personaje seleccionado de la lista de rivales
+
+            Juego.Partida(seleccionado, rivales);
+
+            if (seleccionado.Caracteristicas.Salud > 0)
+            {
+
+                Console.WriteLine("***********************************************************************");
+                Console.WriteLine($"{seleccionado.Datos.Nombre} es el digno merecedor del Trono de Hierro.");
+                Console.WriteLine("***********************************************************************");
+
+                HistorialJson.GuardarGanador(seleccionado, archivoGanadores );
+
+            }else
+            {
+                Console.WriteLine("GAME OVER");
+            }
             
+            Console.WriteLine("---Fin de la Partida---");
+
+
         }
 
         static void MostrarPersonajesDisponibles(List<Personaje> personajes)
@@ -127,7 +167,32 @@ class Program
 
         static void MostrarGanadores(string archivoGanadores)
         {
+            if (HistorialJson.Existe(archivoGanadores))
+            {
+                List<Personaje> ganadores = HistorialJson.LeerGanadores(archivoGanadores);
+                if (ganadores.Count > 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("**************************************************");
+                    Console.WriteLine("*** HISTORIAL DE GANADORES ***");
+                    Console.WriteLine("**************************************************");
+                    foreach (var ganador in ganadores)
+                    {
+                        Console.WriteLine("--------------------------------------------------");
+                        ganador.MostrarPersonaje();
+                        Console.WriteLine("--------------------------------------------------");
+                    }
+                }else
+                {
+                    Console.WriteLine("No hay ganadores registrados en el historial.");
+                }
+            }else
+            {
+                Console.WriteLine("No existe el historial de ganadores.");
+            }
 
+            Console.WriteLine("\nPresiona cualquier tecla para volver al menú principal...");
+            Console.ReadKey();  // Espera a que el usuario presione una tecla
         }
 
     }
