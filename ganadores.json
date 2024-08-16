@@ -12,23 +12,23 @@
       "Magia": 7,
       "Nivel": 6,
       "Coraje": 1,
-      "Salud": 100
+      "Salud": 110
     }
   },
   {
     "Datos": {
       "Casa": "Ravenclaw",
-      "Nombre": "Cho Chang",
-      "Apodo": "La Encantadora",
-      "Nacimiento": "2012-03-09"
+      "Nombre": "Luna Lovegood",
+      "Apodo": "La Excentrica",
+      "Nacimiento": "1981-02-14"
     },
     "Caracteristicas": {
-      "Velocidad": 2,
+      "Velocidad": 4,
       "Destreza": 2,
-      "Magia": 1,
-      "Nivel": 2,
-      "Coraje": 5,
-      "Salud": 100
+      "Magia": 7,
+      "Nivel": 6,
+      "Coraje": 1,
+      "Salud": 110
     }
   }
 ]

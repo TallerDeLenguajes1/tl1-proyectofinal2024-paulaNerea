@@ -7,12 +7,23 @@ using EspacioPartida;
 
 class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             string archivoPersonajes = "personajes.json";
             string archivoGanadores = "ganadores.json";
 
             bool continuar = true;
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("**************************************************");
+            Console.WriteLine("*                                                *");
+            Console.WriteLine("*           La Batalla de los Magos             *");
+            Console.WriteLine("*                                                *");
+            Console.WriteLine("*        ¡Conquista el Trono de los Fundadores!   *");
+            Console.WriteLine("*                                                *");
+            Console.WriteLine("**************************************************");
+            Console.ResetColor();
+            Console.WriteLine("");
 
             while (continuar)
             {
@@ -22,7 +33,7 @@ class Program
                 {
                     case 1:
                         Console.WriteLine("Iniciando Nueva Partida...");
-                        NuevaPartida(archivoPersonajes, archivoGanadores);
+                        await NuevaPartida(archivoPersonajes, archivoGanadores);
                         break;
 
                     case 2:
@@ -32,6 +43,8 @@ class Program
 
                     case 3:
                         continuar = false;
+                        Console.WriteLine("Gracias por jugar a 'La Batalla de los Magos'!");
+                        Console.WriteLine("Vuelvas prontos!");
                         Console.WriteLine("Saliendo del juego...");
                         break;
                 }
@@ -46,16 +59,19 @@ class Program
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("               Nueva Partida");
             Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("¡Bienvenido a 'Duelos en Hogwarts'!");
+            Console.WriteLine("¡Bienvenido a 'La Batalla de los Magos'!");
             Console.WriteLine("En este emocionante juego, tendrás la oportunidad de elegir a un mago y enfrentarlo a sus rivales.");
             Console.WriteLine("Demuestra tus habilidades en intensos combates por turnos. Cada turno, un mago atacará mientras que el otro se defenderá.");
             Console.WriteLine("El combate continuará hasta que uno de los magos pierda toda su salud. El perdedor será eliminado de la competencia.");
-            Console.WriteLine("El mago victorioso recibirá mejoras en sus habilidades, como un aumento en la salud o en la defensa.");
+            Console.WriteLine("El mago victorioso recibirá mejoras en sus habilidades.");
             Console.WriteLine("¿Estás listo para probar tus habilidades y convertirte en el mejor mago de Hogwarts?");
             Console.WriteLine("¡Elige sabiamente y prepárate para la batalla!");
-            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine(" ");
+            Console.WriteLine("Presiona cualquier tecla para continuar...");
+            Console.ReadKey();  // Pausa y espera a que el usuario presione una tecla
 
         }
+
         static void MostrarMenu()
         {
             Console.Clear();
@@ -83,7 +99,7 @@ class Program
             }
         }
         
-        static void NuevaPartida(string archivoPersonajes, string archivoGanadores)
+        static async Task NuevaPartida(string archivoPersonajes, string archivoGanadores)
         {
             MostrarIntroduccion();
             List<Personaje> personajes;
@@ -106,6 +122,7 @@ class Program
                     personajes.Add(personaje);
                 }
 
+                Console.WriteLine();
                 PersonajesJson.GuardarPersonajes(personajes, archivoPersonajes);
                 Console.WriteLine("Se crearon nuevos personajes y se guardaron en el archivo.");
                 Console.WriteLine();
@@ -132,13 +149,13 @@ class Program
             List<Personaje> rivales = new(personajes); //lista de rivales copiando la lista personajes
             rivales.RemoveAt(seleccion); //elimino el personaje seleccionado de la lista de rivales
 
-            Juego.Partida(seleccionado, rivales);
+            await Juego.Partida(seleccionado, rivales);
 
             if (seleccionado.Caracteristicas.Salud > 0)
             {
 
                 Console.WriteLine("***********************************************************************");
-                Console.WriteLine($"{seleccionado.Datos.Nombre} es el digno merecedor del Trono de Hierro.");
+                Console.WriteLine($"{seleccionado.Datos.Nombre} es el digno merecedor del El Trono de los Fundadores.");
                 Console.WriteLine("***********************************************************************");
 
                 HistorialJson.GuardarGanador(seleccionado, archivoGanadores );
@@ -149,6 +166,8 @@ class Program
             }
             
             Console.WriteLine("---Fin de la Partida---");
+            Console.WriteLine("\nPresiona cualquier tecla para volver al menú principal...");
+              // Espera a que el usuario presione una tecla
 
 
         }
@@ -159,6 +178,7 @@ class Program
             for (int i = 0; i < personajes.Count; i++)
             {
                 // Mostrar el índice del personaje (i + 1 para que empiece en 1 en lugar de 0)
+                Console.WriteLine(" ");
                 Console.WriteLine($"[{i + 1}]");
                 // Mostrar los detalles del personaje
                 personajes[i].MostrarPersonaje();
@@ -178,7 +198,6 @@ class Program
                     Console.WriteLine("**************************************************");
                     foreach (var ganador in ganadores)
                     {
-                        Console.WriteLine("--------------------------------------------------");
                         ganador.MostrarPersonaje();
                         Console.WriteLine("--------------------------------------------------");
                     }
@@ -186,6 +205,7 @@ class Program
                 {
                     Console.WriteLine("No hay ganadores registrados en el historial.");
                 }
+                Console.ResetColor();
             }else
             {
                 Console.WriteLine("No existe el historial de ganadores.");

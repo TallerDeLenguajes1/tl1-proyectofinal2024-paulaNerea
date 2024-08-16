@@ -3,12 +3,13 @@ using EspacioFabrica;
 using EspaciodePersonaje;
 using EspacioHistorial;
 using EspaciodePersonajeJson;
+using EspacioManejoApi;
 
 namespace EspacioPartida
 {
     public static class Juego
     {
-        public static void Partida(Personaje personaje, List<Personaje> rivales)
+        public static async Task Partida(Personaje personaje, List<Personaje> rivales)
         {
             foreach (var rival in rivales)
             {
@@ -27,7 +28,7 @@ namespace EspacioPartida
                 Console.WriteLine("********************************************************************************************************");
                 Console.ResetColor();
 
-                Combate(personaje, rival);
+                await Combate(personaje, rival);
                 // Verifico si el personaje ha sido derrotado después del combate
                 if (personaje.Caracteristicas.Salud <= 0)
                 {
@@ -48,7 +49,7 @@ namespace EspacioPartida
             }
         }
 
-        public static void Combate(Personaje personaje, Personaje rival)
+        public static async Task Combate(Personaje personaje, Personaje rival)
         {
             while (personaje.Caracteristicas.Salud > 0 && rival.Caracteristicas.Salud > 0)
             {
@@ -71,6 +72,12 @@ namespace EspacioPartida
                     break; // Termina el combate con este rival
                 }
 
+                var hechizo1 = await ManejoApi.GetRandomSpellAsync();
+                if (hechizo1 != null)
+                {
+                    Console.WriteLine($"{personaje.Datos.Nombre} uso {hechizo1.spell}");
+                }
+
                 // Turno del rival
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine();
@@ -86,6 +93,12 @@ namespace EspacioPartida
                     personaje.Caracteristicas.Salud = 0; 
                     Console.WriteLine($"{personaje.Datos.Nombre} ha sido derrotado.");
                     break; 
+                }
+
+                var hechizo2 = await ManejoApi.GetRandomSpellAsync();
+                if (hechizo2 != null)
+                {
+                    Console.WriteLine($"{rival.Datos.Nombre} usa {hechizo2.spell}");
                 }
 
                 Console.WriteLine($"-----------------------------------");

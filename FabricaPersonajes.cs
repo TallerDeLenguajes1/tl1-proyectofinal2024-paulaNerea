@@ -15,7 +15,7 @@ namespace EspacioFabrica
             { "Luna Lovegood", "La Excentrica", "Ravenclaw" },
             { "Neville Longbottom", "El Valiente", "Gryffindor" },
             { "Ginny Weasley", "La Guerrera", "Gryffindor" },
-            { "Severus Snape", "El Maestro de Pociones", "Slytherin" },
+            { "Terry Boot", "El Estudioso", "Ravenclaw" },
             { "Cedric Diggory", "El Justo", "Hufflepuff" },
             { "Cho Chang", "La Encantadora", "Ravenclaw" }
         };
@@ -31,7 +31,7 @@ namespace EspacioFabrica
             }
         }
         private static readonly Random random = new Random();
-        public static Personaje CrearPersonaje() //
+        public static Personaje CrearPersonaje() 
         {
             
             if (indicesDisponibles.Count == 0)
