@@ -42,9 +42,9 @@ namespace EspacioPartida
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine();
-                Console.WriteLine("**************************************************");
+                Console.WriteLine("**************************************************************************************************");
                 Console.WriteLine($"*** {personaje.Datos.Nombre.ToUpper()} HA DERROTADO A TODOS LOS RIVALES Y ES EL GANADOR FINAL ***");
-                Console.WriteLine("**************************************************");
+                Console.WriteLine("**************************************************************************************************");
                 Console.ResetColor();
             }
         }
@@ -98,7 +98,7 @@ namespace EspacioPartida
                 var hechizo2 = await ManejoApi.GetRandomSpellAsync();
                 if (hechizo2 != null)
                 {
-                    Console.WriteLine($"{rival.Datos.Nombre} usa {hechizo2.spell}");
+                    Console.WriteLine($"{rival.Datos.Nombre} uso {hechizo2.spell}");
                 }
 
                 Console.WriteLine($"-----------------------------------");

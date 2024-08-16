@@ -14,17 +14,6 @@ class Program
 
             bool continuar = true;
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("**************************************************");
-            Console.WriteLine("*                                                *");
-            Console.WriteLine("*           La Batalla de los Magos             *");
-            Console.WriteLine("*                                                *");
-            Console.WriteLine("*        ¡Conquista el Trono de los Fundadores!   *");
-            Console.WriteLine("*                                                *");
-            Console.WriteLine("**************************************************");
-            Console.ResetColor();
-            Console.WriteLine("");
-
             while (continuar)
             {
                 MostrarMenu();
@@ -43,7 +32,7 @@ class Program
 
                     case 3:
                         continuar = false;
-                        Console.WriteLine("Gracias por jugar a 'La Batalla de los Magos'!");
+                        Console.WriteLine("Gracias por jugar al 'Torneo de los 3 Magos'!");
                         Console.WriteLine("Vuelvas prontos!");
                         Console.WriteLine("Saliendo del juego...");
                         break;
@@ -59,13 +48,14 @@ class Program
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("               Nueva Partida");
             Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("¡Bienvenido a 'La Batalla de los Magos'!");
-            Console.WriteLine("En este emocionante juego, tendrás la oportunidad de elegir a un mago y enfrentarlo a sus rivales.");
-            Console.WriteLine("Demuestra tus habilidades en intensos combates por turnos. Cada turno, un mago atacará mientras que el otro se defenderá.");
-            Console.WriteLine("El combate continuará hasta que uno de los magos pierda toda su salud. El perdedor será eliminado de la competencia.");
-            Console.WriteLine("El mago victorioso recibirá mejoras en sus habilidades.");
-            Console.WriteLine("¿Estás listo para probar tus habilidades y convertirte en el mejor mago de Hogwarts?");
-            Console.WriteLine("¡Elige sabiamente y prepárate para la batalla!");
+            Console.WriteLine("¡Bienvenido al 'Torneo de los 3 Magos'!");
+            Console.WriteLine("En este emocionante torneo, tendrás la oportunidad de competir en uno de los eventos más prestigiosos de Hogwarts.");
+            Console.WriteLine("Elige a tu mago y enfréntalo en una serie de duelos épicos contra otros campeones.");
+            Console.WriteLine("Cada duelo es un enfrentamiento por turnos donde deberás demostrar tu habilidad mágica y estrategia.");
+            Console.WriteLine("El combate continúa hasta que uno de los magos pierda toda su salud. El perdedor será eliminado del torneo.");
+            Console.WriteLine("El mago que sobreviva a todos sus rivales y gane la final será coronado campeón de 'La Copa de los Tres Magos'.");
+            Console.WriteLine("¿Tienes lo necesario para triunfar y convertirte en el campeón absoluto?");
+            Console.WriteLine("¡Elige sabiamente y prepárate para demostrar tu maestría mágica!");
             Console.WriteLine(" ");
             Console.WriteLine("Presiona cualquier tecla para continuar...");
             Console.ReadKey();  // Pausa y espera a que el usuario presione una tecla
@@ -75,6 +65,8 @@ class Program
         static void MostrarMenu()
         {
             Console.Clear();
+            Console.WriteLine("****************************************");
+            Console.WriteLine("*          'TORNEO DE LOS 3 MAGOS'      *");
             Console.WriteLine("****************************************");
             Console.WriteLine("*              MENÚ PRINCIPAL           *");
             Console.WriteLine("****************************************");
@@ -114,7 +106,7 @@ class Program
             {
                 // Si no existe, crea personajes con la fábrica de personajes y los guarda en el JSON
                 personajes = new List<Personaje>();
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     // Crea un personaje usando la fábrica
                     Personaje personaje = FabricaPersonajes.CrearPersonaje();
@@ -155,7 +147,7 @@ class Program
             {
 
                 Console.WriteLine("***********************************************************************");
-                Console.WriteLine($"{seleccionado.Datos.Nombre} es el digno merecedor del El Trono de los Fundadores.");
+                Console.WriteLine($"{seleccionado.Datos.Nombre} es el digno merecedor de la Copa de los 3 Magos");
                 Console.WriteLine("***********************************************************************");
 
                 HistorialJson.GuardarGanador(seleccionado, archivoGanadores );
@@ -174,7 +166,7 @@ class Program
 
         static void MostrarPersonajesDisponibles(List<Personaje> personajes)
         {
-            Console.WriteLine("Personajes disponibles: ");
+            Console.WriteLine("Magos elegidos por el Caliz de Fuego: ");
             for (int i = 0; i < personajes.Count; i++)
             {
                 // Mostrar el índice del personaje (i + 1 para que empiece en 1 en lugar de 0)

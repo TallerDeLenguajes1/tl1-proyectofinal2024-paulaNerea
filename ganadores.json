@@ -1,34 +1,18 @@
 [
   {
     "Datos": {
-      "Casa": "Ravenclaw",
-      "Nombre": "Luna Lovegood",
-      "Apodo": "La Excentrica",
-      "Nacimiento": "1981-02-14"
+      "Casa": "Durmstrang",
+      "Nombre": "Viktor Krum",
+      "Apodo": "El Quidditchista",
+      "Nacimiento": "1991-02-19"
     },
     "Caracteristicas": {
-      "Velocidad": 4,
+      "Velocidad": 1,
       "Destreza": 2,
-      "Magia": 7,
-      "Nivel": 6,
-      "Coraje": 1,
-      "Salud": 110
-    }
-  },
-  {
-    "Datos": {
-      "Casa": "Ravenclaw",
-      "Nombre": "Luna Lovegood",
-      "Apodo": "La Excentrica",
-      "Nacimiento": "1981-02-14"
-    },
-    "Caracteristicas": {
-      "Velocidad": 4,
-      "Destreza": 2,
-      "Magia": 7,
-      "Nivel": 6,
-      "Coraje": 1,
-      "Salud": 110
+      "Magia": 10,
+      "Nivel": 3,
+      "Coraje": 6,
+      "Salud": 71
     }
   }
 ]

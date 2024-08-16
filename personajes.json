@@ -1,33 +1,49 @@
 [
   {
     "Datos": {
-      "Casa": "Ravenclaw",
-      "Nombre": "Luna Lovegood",
-      "Apodo": "La Excentrica",
-      "Nacimiento": "1981-02-14"
+      "Casa": "Gryffindor",
+      "Nombre": "Hermione Granger",
+      "Apodo": "La Cerebrito",
+      "Nacimiento": "2023-04-23"
     },
     "Caracteristicas": {
-      "Velocidad": 4,
-      "Destreza": 2,
-      "Magia": 7,
-      "Nivel": 6,
-      "Coraje": 1,
+      "Velocidad": 2,
+      "Destreza": 3,
+      "Magia": 1,
+      "Nivel": 4,
+      "Coraje": 6,
       "Salud": 100
     }
   },
   {
     "Datos": {
-      "Casa": "Ravenclaw",
-      "Nombre": "Cho Chang",
-      "Apodo": "La Encantadora",
-      "Nacimiento": "2012-03-09"
+      "Casa": "Durmstrang",
+      "Nombre": "Viktor Krum",
+      "Apodo": "El Quidditchista",
+      "Nacimiento": "1991-02-19"
     },
     "Caracteristicas": {
-      "Velocidad": 2,
+      "Velocidad": 1,
       "Destreza": 2,
-      "Magia": 1,
-      "Nivel": 2,
-      "Coraje": 5,
+      "Magia": 10,
+      "Nivel": 3,
+      "Coraje": 6,
+      "Salud": 100
+    }
+  },
+  {
+    "Datos": {
+      "Casa": "Gryffindor",
+      "Nombre": "Ginny Weasley",
+      "Apodo": "La Guerrera",
+      "Nacimiento": "2021-11-30"
+    },
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 4,
+      "Magia": 3,
+      "Nivel": 3,
+      "Coraje": 6,
       "Salud": 100
     }
   }

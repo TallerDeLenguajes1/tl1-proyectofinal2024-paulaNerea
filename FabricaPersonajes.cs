@@ -17,7 +17,9 @@ namespace EspacioFabrica
             { "Ginny Weasley", "La Guerrera", "Gryffindor" },
             { "Terry Boot", "El Estudioso", "Ravenclaw" },
             { "Cedric Diggory", "El Justo", "Hufflepuff" },
-            { "Cho Chang", "La Encantadora", "Ravenclaw" }
+            { "Cho Chang", "La Encantadora", "Ravenclaw" },
+            { "Fleur Delacour", "La Bella", "Beauxbatons" }, 
+            { "Viktor Krum", "El Quidditchista", "Durmstrang" }
         };
 
         private static List<int> indicesDisponibles = new List<int>(); //lista para controlar los indices
