@@ -145,27 +145,29 @@ class Program
 
             if (seleccionado.Caracteristicas.Salud > 0)
             {
-
+                Console.WriteLine(" ");
                 Console.WriteLine("***********************************************************************");
                 Console.WriteLine($"{seleccionado.Datos.Nombre} es el digno merecedor de la Copa de los 3 Magos");
                 Console.WriteLine("***********************************************************************");
 
                 HistorialJson.GuardarGanador(seleccionado, archivoGanadores );
+                Console.WriteLine("Presiona cualquier tecla para continuar.");
+                Console.ReadKey();
 
             }else
             {
                 Console.WriteLine("GAME OVER");
             }
-            
+            Console.WriteLine(" ");
             Console.WriteLine("---Fin de la Partida---");
             Console.WriteLine("\nPresiona cualquier tecla para volver al menú principal...");
-              // Espera a que el usuario presione una tecla
-
+            Console.ReadKey();
 
         }
 
         static void MostrarPersonajesDisponibles(List<Personaje> personajes)
         {
+            Console.WriteLine(" ");
             Console.WriteLine("Magos elegidos por el Caliz de Fuego: ");
             for (int i = 0; i < personajes.Count; i++)
             {

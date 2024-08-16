@@ -28,11 +28,14 @@ namespace EspacioPartida
                 Console.WriteLine("********************************************************************************************************");
                 Console.ResetColor();
 
+                Console.WriteLine("Presiona cualquier tecla para iniciar el combate...");
+                Console.ReadKey();
+
                 await Combate(personaje, rival);
                 // Verifico si el personaje ha sido derrotado después del combate
                 if (personaje.Caracteristicas.Salud <= 0)
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("");
                     Console.WriteLine($"{personaje.Datos.Nombre} ha sido derrotado y no puede continuar la batalla.");
                     break; // Termina la partida si el personaje ha sido derrotado
                 }
@@ -46,6 +49,8 @@ namespace EspacioPartida
                 Console.WriteLine($"*** {personaje.Datos.Nombre.ToUpper()} HA DERROTADO A TODOS LOS RIVALES Y ES EL GANADOR FINAL ***");
                 Console.WriteLine("**************************************************************************************************");
                 Console.ResetColor();
+                Console.WriteLine("Presiona cualquier tecla para continuar.");
+                Console.ReadKey();
             }
         }
 

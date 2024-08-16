@@ -4,15 +4,15 @@
       "Casa": "Durmstrang",
       "Nombre": "Viktor Krum",
       "Apodo": "El Quidditchista",
-      "Nacimiento": "1991-02-19"
+      "Nacimiento": "2011-11-11"
     },
     "Caracteristicas": {
-      "Velocidad": 1,
-      "Destreza": 2,
-      "Magia": 10,
-      "Nivel": 3,
-      "Coraje": 6,
-      "Salud": 71
+      "Velocidad": 10,
+      "Destreza": 4,
+      "Magia": 5,
+      "Nivel": 6,
+      "Coraje": 2,
+      "Salud": 61
     }
   }
 ]
