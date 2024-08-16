@@ -47,7 +47,7 @@ Al iniciar el juego, se presenta un menú principal con las siguientes opciones:
 
 ### Historial de Ganadores
 
-Se listan todos los personajes que ganaron el torneo. Se listan todos los personajes que ganaron el torneo. Si no existen ganadores, se muestra un mensaje informando de ello.
+Se listan todos los personajes que ganaron el torneo. Si no existen ganadores, se muestra un mensaje informando de ello.
 
 ## API
 
